@@ -1,0 +1,37 @@
+#
+# production configuration
+#
+spring:
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://49.247.9.194:3306/webdb?characterEncoding=utf8
+      username: webdb
+      password: '{cipher}AQBpa7g+7hvOyYCR9BrLnlwuKcjEp5PC1qiymQb3hHEBqhkqddfpVRUSfIkppT3hyHEE25+M9KuUQR/tREHbZTtOISWCBefHaIWb/3EwtM5crNAtsieG+B+s6czcCUTiPJBcIlXrH/ema2M1AgXpgQUhczU1fYK+d/4p2RU7IQA/r8msYN2JH8XmI/yqbkl8Q8V/M/cLBS9NPSaHlBx3g9MeznwnFzXEAJtVHtqIEIyJHzC6A7PILkTOZivOkyKA/I0vcaESf9ptnOFGSKMqPWRu2eloueYrIwS3FIVFj5gbEAMFBOsAdhx+DUGdMibnNvDCdsxkWRR4ELoh9GREykr7VuK4FljfgIoWs52+RPUADPfcuXoU6QS98yMIbO6PH3M='
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+eureka:
+   instance:
+      preferIpAddress: true
+   client:
+      fetchRegistry: true
+      registerWithEureka: true
+      serviceUrl:
+         defaultZone: http://49.247.9.194:8761/eureka
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
+         max-history: 10
+   file:
+      name: logs/${spring.application.name}.log
+   level:
+      root: WARN
+      me:
+         kickscar:
+            msa:
+               service:
+                  emaillist:
+                     exception: ERROR

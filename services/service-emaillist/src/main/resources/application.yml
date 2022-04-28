@@ -24,4 +24,4 @@ spring:
    config:
       activate:
          on-profile: production
-      import: optional:configserver:http://34.64.148.106:7777
+      import: optional:configserver:http://34.64.240.101:7777

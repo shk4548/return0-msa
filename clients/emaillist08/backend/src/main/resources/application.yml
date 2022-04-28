@@ -79,7 +79,11 @@ server:
 #         defaultZone: http://49.247.9.194:8761/eureka
 gateway:
    name: zuul
+<<<<<<< HEAD
    endpoint: http://34.64.240.101:5555 
+=======
+   endpoint: http://localhost:5555 
+>>>>>>> 1241fda5045b7c12f466aa6e4a4dac95902e3532
 logging:
    pattern:
       file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
